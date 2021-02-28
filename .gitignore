@@ -30,3 +30,11 @@
 *.exe
 *.out
 *.app
+
+.DS_store
+*.prob
+*.tcs
+*.bin
+.vscode
+.cph
+io/
