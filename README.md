@@ -21,6 +21,11 @@ My current env setup for CP (I've been sticking to these tools for a while) :
  - Code Snippets can be found in any Solution File.
 
     
+    
+
+
+  
+
 
 Online judges mostly used (along side with others):
 
@@ -35,3 +40,6 @@ Online judges mostly used (along side with others):
 -  [Hackerrank](https://www.hackerrank.com/)
 
 -  [TopCoder](https://www.topcoder.com/)
+
+
+> `File names are usualy The problem ID.`
