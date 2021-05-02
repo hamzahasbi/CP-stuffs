@@ -64,6 +64,7 @@ int main() {
         } else {
             point[2].second = (point[1].second + 1) % n;
             point[3].second = (point[0].second + 1) % n;
+           
         }
 
         for(int i = 0; i < 4; ++i) {
