@@ -24,7 +24,7 @@ My current env setup for CP (I've been sticking to these tools for a while) :
   
 
 
-Online judges mostly used (along side with others):
+Online judges mostly used :
 
   
 
