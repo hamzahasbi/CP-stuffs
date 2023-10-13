@@ -36,7 +36,7 @@ int main() {
       cin >> p[i];
     }
     sort(p.rbegin(), p.rend());
-    int l = 0, r = n - 1;
+
     int applied = 1;
     for(int i = 1; i < n; ++i) {
       bool can = true;
@@ -50,8 +50,6 @@ int main() {
       applied += (can == true);
       if (!can) break;
     }
-    // while(can && l <= r) {
-    //   applied -= t;
 
     // }
     puts(applied == n ? "YES" : "NO" );
