@@ -48,8 +48,10 @@ int main() {
     cin.tie(NULL);
     READ();
     string s;
-    unordered_map<long long, long long>seeds, g;
+    unordered_map<long long, long long>seeds;
+    map<pair<long long, long long>, pair<long long, long long>>g;
     unordered_map<long long, bool>step;
+    map<pair<long long, long long>, bool>step2;
     string link = "";
     int idx = 0;
     while(getline(cin, s)) {
@@ -58,9 +60,21 @@ int main() {
       if (idx == 0) {
         auto ss = split(s, ':');
         auto seed = split(ss[1], ' ');
+        int count = 0;
+        long long len, from;
+        len = from = -1;
         for(auto el : seed) {
           if (!el.empty()) {
             seeds[stoll(el)]= stoll(el);
+            if (count < 2) {
+              if (from == -1) from = stoll(el);
+              else len = stoll(el);
+            }
+            else {
+              count = 0;
+              len = from = -1;
+              g[{from, len}] = {from, len};
+            }
           }
         }
         idx++;
@@ -85,12 +99,25 @@ int main() {
             step[x.first] = true;
           }
         }
+        for(auto el : g) {
+          auto key = el.first; //pair
+          auto val = el.second; //pair
+          if (val.first >= source && val.first + val.second <= source + offset && !step2[key]) {
+            long long curr = val.first - source;
+            g[key] = {target + curr, val.second};
+            step2[key] = true;
+          }
+        }
       }
-
     }
+
     long long ans = LLONG_MAX;
-    for(auto x : seeds) {
-      ans = min(ans, x.second);
+    pair<ll, ll> keyRange = {-1LL, -1LL};
+    for(auto el : g) {
+      if (ans >= el.second.first) {
+        ans = min(ans, el.second.first);
+        keyRange = el.second;
+      }
     }
     cout << ans << endl;
     auto end = std::chrono::high_resolution_clock::now();

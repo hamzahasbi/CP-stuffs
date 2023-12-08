@@ -100,7 +100,6 @@ bool compare(pair<string, int> a, pair<string, int> b) {
   if (handType(a.first) == handType(b.first)) {
     for(int i = 0; i < a.first.size(); ++i) {
       bool diff = a.first[i] != b.first[i];
-
       if (diff) return (cardValue(a.first[i]) > cardValue(b.first[i]));
     }
     return false;
