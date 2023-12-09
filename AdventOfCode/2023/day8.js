@@ -52,12 +52,10 @@ function main() {
         const from = infos[0].trim();
         const to = infos[1].trim().replace(/[{()}[\]]/g, '').split(",").map((el) => el.trim());
         g.set(from, to);
-
       }
     }
     g.forEach((val, key) => {
       if (key.endsWith('A')) roots.push(key);
-      if (key.endsWith('Z')) leafs.push(key);
     })
     // console.log(g);
     const dfs = (node, dir) => {
