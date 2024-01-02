@@ -9,15 +9,15 @@ template <class T> struct FenwickTree {
         bit.assign(n, 0);
     }
 
-    // O(n * log(n)) Linear construction
-    FenwickTree(vector<T> const &a) : FenwickTree(a.size()) {
-        for (size_t i = 0; i < a.size(); i++)
-            add(i, a[i]);
-    }
+    // O(n * log(n))  construction
+    // FenwickTree(vector<T> const &a) : FenwickTree(a.size()) {
+    //     for (size_t i = 0; i < a.size(); i++)
+    //         add(i, a[i]);
+    // }
 
     T sum(int r) {
-        int ret = 0;
-        for (; r >= 0; r = (r & (r + 1)) - 1)
+        T ret = 0;
+        for (; r > 0; r -= (r & (-r)))
             ret += bit[r];
         return ret;
     }
@@ -26,8 +26,8 @@ template <class T> struct FenwickTree {
         return sum(r) - sum(l - 1);
     }
 
-    void add(int idx, int delta) {
-        for (; idx < n; idx = idx | (idx + 1))
+    void add(int idx, T delta) {
+        for (; idx < n; idx += (idx & (-idx)))
             bit[idx] += delta;
     }
     // O(n) Linear construction
