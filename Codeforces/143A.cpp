@@ -49,13 +49,35 @@ void _print(const T &x, const Args &... args) {cout << x << ", "; _print(args...
 #define debug(x...)
 #endif
 
-
+bool areDistinct(int a, int b, int c, int d) {
+    unordered_set<int> numSet = {a, b, c, d};
+    return numSet.size() == 4;
+}
 int main() {
     auto start = std::chrono::high_resolution_clock::now();
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 //    READ();
+    vector<pair<int,int>>a(3);
+    for(int i = 0; i < 3; ++i) {
+      cin >> a[i].first >> a[i].second;
+    }
 
+    for(int i = 1; i <= 9; ++i) {
+      for(int j = 1; j <= 9; ++j) {
+        for(int k = 1; k <= 9; ++k) {
+          for(int x = 1; x <= 9; ++x) {
+            if (areDistinct(i, j, k, x)) {
+              if (i + j == a[0].first && k + x == a[0].second && i + k == a[1].first && j + x == a[1].second && i + x == a[2].first && j + k == a[2].second) {
+                cout << i << " " << j << "\n" << k << " " << x << "\n";
+                return 0;
+              }
+            }
+          }
+        }
+      }
+    }
+    cout << "-1\n";
     auto end = std::chrono::high_resolution_clock::now();
     auto duration = std::chrono::duration_cast<std::chrono::microseconds>( end - start ).count();
     //cout << "Finished in " << duration << " ms" << endl;
