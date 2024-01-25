@@ -87,6 +87,22 @@ public:
     }
 
 };
+
+
+template<typename T> class LCS {
+public:
+    T compute(string &s, string &t, int n, int m, vector<vector<T> >& dp) {
+        if (m == 0 || n == 0) return 0;
+        if (s[n - 1] == t[m - 1]) {
+            return dp[n][m] = 1 + lcs(s, t, n - 1, m - 1, dp);
+        }
+        if (dp[n][m] != -1) {
+            return dp[n][m];
+        }
+        return dp[n][m] = max(lcs(s, t, n, m - 1, dp),
+                            lcs(s, t, n - 1, m, dp));
+    }
+};
 int main() {
     auto start = std::chrono::high_resolution_clock::now();
     ios_base::sync_with_stdio(false);
