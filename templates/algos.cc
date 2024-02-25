@@ -50,6 +50,26 @@ void _print(const T &x, const Args &... args) {cout << x << ", "; _print(args...
 #define debug(x...)
 #endif
 
+// for recursive lamba
+template <class F>
+struct y_combinator {
+    F f; // the lambda will be stored here
+
+    // a forwarding operator():
+    template <class... Args>
+    decltype(auto) operator()(Args&&... args) const {
+        // we pass ourselves to f, then the arguments.
+        return f(*this, std::forward<Args>(args)...);
+    }
+};
+
+// helper function that deduces the type of the lambda:
+template <class F>
+y_combinator<std::decay_t<F>> make_y_combinator(F&& f) {
+    return {std::forward<F>(f)};
+}
+
+
 template<typename T> class LIS {
 public:
     int binarySearch(vector<T>& nums) {
@@ -109,6 +129,17 @@ int main() {
     cin.tie(NULL);
 //    READ();
 
+    auto dfs = make_y_combinator([&] (auto self, int root, int p = -1) -> void {
+      if (!g.count(root)) return;
+      vis[root] = 1 + vis[root];
+      for(auto v : g[root]) {
+        if (!vis[v]) {
+          // debug(root, v);
+          ans *= 2;
+          self(v, root);
+        }
+      }
+    });
     auto end = std::chrono::high_resolution_clock::now();
     auto duration = std::chrono::duration_cast<std::chrono::microseconds>( end - start ).count();
     //cout << "Finished in " << duration << " ms" << endl;
