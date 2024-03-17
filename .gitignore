@@ -49,3 +49,9 @@
 .cph
 io/
 *.txt
+*.toml
+
+
+# Added by cargo
+
+/target
