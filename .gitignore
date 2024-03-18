@@ -55,3 +55,4 @@ io/
 # Added by cargo
 
 /target
+test/cases/*
