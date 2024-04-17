@@ -61,4 +61,4 @@ test/cases/*
 # Except this file
 !.gitignore
 # Except folders
-!*/
+!*/*
