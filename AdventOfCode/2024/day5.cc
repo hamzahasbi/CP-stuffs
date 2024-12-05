@@ -98,16 +98,24 @@ int main() {
 
     for(auto &el : invalid) {
       debug("ELEMENT");
-      for(int i = el.size() - 1; i >= 0 ; --i)  {
-        auto curr = el[i];
-        for(int j = 0; j < i; j++) {
-          auto dep = graph[curr];
-          if (dep.find(el[j]) != dep.end()) {
-            swap(el[i], el[j]);
+      bool changed = true;
+      while(changed) {
+        changed = false;
+        for(int i = 0; i < el.size(); i++) {
+          auto curr = el[i];
+          for(int j = 0; j < i; j++) {
+            auto dep = graph[curr];
+            if (dep.find(el[j]) != dep.end()) {
+              // If we find a dependency that should come before current element
+              swap(el[i], el[j]);
+              changed = true;
+              break;
+            }
           }
         }
-        printVector(el);
       }
+      debug("After sorting:");
+      printVector(el);
     }
     for(auto el : invalid) {
 
