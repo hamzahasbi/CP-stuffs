@@ -64,7 +64,7 @@ function findXMAS(grid) {
 }
 
 // Part 2.
-// Part 2.
+
 function findXMAS2(grid) {
   const rows = grid.length;
   const cols = grid[0].length;
