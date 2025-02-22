@@ -6,7 +6,7 @@ Welcome to my **Competitive Programming Repository**! This repo documents my jou
 
 ## 🏆 Achievements
 
-- **ICPC Certified**: I am proud to have participated in the International Collegiate Programming Contest (ICPC), a prestigious competition that tests problem-solving skills under time pressure.  
+- **ICPC Certified**: I am proud to have participated in the International Collegiate Programming Contest (ICPC), a prestigious competition that tests problem-solving skills under time pressure.
   [View my ICPC certification](https://icpc.global/ICPCID/WAGH6U10DUDD)
 
 ---
@@ -15,7 +15,7 @@ Welcome to my **Competitive Programming Repository**! This repo documents my jou
 
 I use the following tools to streamline my competitive programming workflow:
 
-- **Primary Editor**: [Vscodium](https://vscodium.com/) 
+- **Primary Editor**: [Vscodium](https://vscodium.com/)
   The go-to editor for its flexibility and extensive plugin ecosystem.
 
 - **Alternative Editors**:
@@ -27,7 +27,7 @@ I use the following tools to streamline my competitive programming workflow:
   - [Competitive Programming Helper](https://marketplace.visualstudio.com/items?itemName=DivyanshuAgrawal.competitive-programming-helper): Helps with testing and debugging.
   - [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner): Executes code snippets quickly.
 
-- **Code Snippets**:  
+- **Code Snippets**:
   You can find reusable code snippets in any solution file. These snippets are optimized for speed and efficiency.
 
 ---
@@ -50,37 +50,39 @@ Here are the platforms where I solve problems:
 
 ## 📁 File Naming Convention
 
-- **File Names**:  
+- **File Names**:
   Files are named using the **Problem ID** for easy identification. For example, a problem from Codeforces with ID `123A` will be saved as `123A.cpp`.
 
 ---
 
 ## 🚀 How to Use This Repo
 
-1. **Browse Solutions**:  
+1. **Browse Solutions**:
    Navigate through the folders to find solutions to specific problems. Each file contains the problem ID and the corresponding solution.
 
-2. **Reuse Code Snippets**:  
+2. **Reuse Code Snippets**:
    Feel free to reuse any code snippets or templates provided in the solution files.
 
-3. **Contribute**:  
+3. **Contribute**:
    If you have a better solution or want to add a problem, feel free to open a pull request!
 
 ---
 
 ## 💡 Why This Setup Works for Me
 
-- **Efficiency**:  
+- **Efficiency**:
   The combination of VSCode, Competitive Companion, and Competitive Programming Helper allows me to fetch, test, and debug problems quickly.
 
-- **Customizability**:  
+- **Customizability**:
   VSCode's extensive plugin ecosystem lets me tailor the editor to my needs, from snippets to themes.
 
+- **Tools**:
+  I use my own [dotporter](https://crates.io/crates/dotporter) Rust tool to backup my configuration everytime i change my computer (just migrated from M1 pro to M4 pro).
 
-- **Portability**:  
+- **Portability**:
   All my solutions and tools are stored in one place, making it easy to switch between devices or share my setup with others.
 
-- **Learning**:  
+- **Learning**:
   By solving problems on multiple platforms, I get exposure to a wide variety of challenges and improve my problem-solving skills.
 
 ---
@@ -104,4 +106,4 @@ If you have any questions, suggestions, or just want to chat about competitive p
 
 ---
 
-Happy coding! 🎉  
+Happy coding! 🎉
